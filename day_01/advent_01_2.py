@@ -8,7 +8,6 @@ def main():
     lines = input_file.readlines()
     first_list = []
     second_list = []
-    counts_list = []
     for line in lines:
         nums = line.split()
         first_list.append(int(nums[0]))
