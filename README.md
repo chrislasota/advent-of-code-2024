@@ -1,2 +1,2 @@
 # advent-of-code-2024
-My solutions to Advent of Code problems for 2024
+My Python solutions to Advent of Code 2024 problems
