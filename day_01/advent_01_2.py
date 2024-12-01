@@ -13,8 +13,6 @@ def main():
         first_list.append(int(nums[0]))
         second_list.append(int(nums[1]))
 
-    first_list.sort()
-    second_list.sort()
     N = len(first_list)
     for i in range(N):
         for k in range(N):
