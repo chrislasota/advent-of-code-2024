@@ -2,7 +2,7 @@
 # Day 2 (Dec 2nd)
 # Problem 1
 
-def validate_record(levels):
+def validate_report(levels):
     # returns True if record is a safe one and False if not
     how_many_levels = len(levels)
     diff = levels[1] - levels[0]
@@ -42,7 +42,7 @@ def main():
     for line in lines:
         text_levels = line.split()
         levels = [int(x) for x in text_levels]
-        if validate_record(levels):
+        if validate_report(levels):
             safe_report_count += 1
 
     input_file.close()
