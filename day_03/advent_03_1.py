@@ -10,15 +10,10 @@ def main() -> int:
         match_pattern = "mul[(][0-9]+,[0-9]+[)]"
         for line in input_file:
             mul_list = re.findall(match_pattern, line)
-            print(mul_list)
             for operation in mul_list:
                 numbers_str = re.findall("[0-9]+,[0-9]+", operation)
                 operands = re.split(',', numbers_str[0])
-                print(operation)
-                print(numbers_str)
-                print(operands)
                 big_sum = big_sum + int(operands[0]) * int(operands[1])
-                print(big_sum)
 
     input_file.close()
     return big_sum
