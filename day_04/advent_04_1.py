@@ -4,7 +4,6 @@
 
 import re
 
-
 def count_xmas_or_samx(input_string) -> int:
     match_list = re.findall("XMAS|SAMX", input_string)
     return len(match_list)
