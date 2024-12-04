@@ -4,10 +4,11 @@
 
 import re
 
+
 def count_xmas_or_samx(input_string) -> int:
-    match_list_forward = re.findall("XMAS", input_string)
-    match_list_backward = re.findall("SAMX", input_string)
-    return len(match_list_forward) + len(match_list_backward)
+    match_list = re.findall("XMAS|SAMX", input_string)
+    return len(match_list)
+
 
 def main() -> int:
     xmas_count = 0
@@ -35,7 +36,7 @@ def main() -> int:
                 temp_string = temp_string + char_array[row + k][col]
             xmas_count += count_xmas_or_samx(temp_string)
 
-    # check diagonally NW-SE
+    # check diagonally NW-SE (backslash shape)
     for row in range(rows - 3):
         for col in range(columns - 3):
             temp_string = ""
@@ -43,7 +44,7 @@ def main() -> int:
                 temp_string = temp_string + char_array[row + k][col + k]
             xmas_count += count_xmas_or_samx(temp_string)
 
-    # check diagonally SW-NE
+    # check diagonally SW-NE (slash shape)
     for row in range(rows - 3):
         for col in range(3, columns):
             temp_string = ""
