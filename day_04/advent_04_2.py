@@ -37,4 +37,4 @@ def main() -> int:
 
 
 if __name__ == "__main__":
-    print(f"The number of time XMAS appears is : {main()}")
+    print(f"The number of X-MAS occurences is : {main()}")
