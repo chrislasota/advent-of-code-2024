@@ -4,7 +4,7 @@
 
 import re
 
-def order_page_list(page_list, rule_list) -> list:
+def order_page_list(page_list, rule_list):
     while True:
         we_did_not_swap = True
         for rule in rule_list:
@@ -23,7 +23,7 @@ def order_page_list(page_list, rule_list) -> list:
                     # after swapping re-check entire list
         if we_did_not_swap:
             break
-    return page_list
+    return
 
 
 def update_is_valid(rule_list, update) -> bool:
@@ -60,7 +60,7 @@ def main() -> int:
     for update in update_list:
         if update_is_valid(rule_list, update):
             continue
-        update = order_page_list(update, rule_list)
+        order_page_list(update, rule_list)
         middle_page = update[len(update) // 2]
         middle_page_sum += middle_page
 
