@@ -13,7 +13,7 @@ def create_operator_combo(value, width):
     str = '+'
     while value > 0:
         if (value % 3) == 0:
-            str = str +'+'
+            str = str + '+'
         if (value % 3) == 1:
             str = str + '*'
         if (value % 3) == 2:
