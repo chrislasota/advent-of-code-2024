@@ -92,9 +92,7 @@ def main() -> int:
                     break
                 if next_row == grid_rows or next_column == grid_columns:
                     break
-                # if guard would hit obstacle, first check if we've been to
-                # this position before with the same trajectory.  If not,
-                # turn right and keep moving
+                # if guard would hit obstacle, turn right
                 if grid[next_row][next_column] == '#':
                     guard_direction = turn_right(guard_direction)
                     continue
