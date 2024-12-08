@@ -5,7 +5,7 @@
 import re
 
 def create_operator_combo(value, width):
-    # Here we convert an integer into a string of '+' and '-' characters, as
+    # Here we convert an integer into a string of '+' and '*' characters, as
     # if it were a binary representation, but counting down, and we return it
     # as a list.  We also prepend an extra "+" as the first operator.  All
     # that truly matters is that there's a 1-to-1 map between values and
