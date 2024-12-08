@@ -45,7 +45,7 @@ def main() -> int:
             equations.append(line.split(': '))
 
     # Now loop through each equation, and see if it can be made "correct"
-    # using some combination of the '+' and '-' operators
+    # using some combination of the '+' and '*' operators
     for eq in equations:
         # convert target result to an integer
         result = int(eq[0])
