@@ -32,10 +32,8 @@ def main() -> int:
             width = len(stone)
             if width % 2 == 0:
                 half = width // 2
-                first = stone[:half]
-                second = stone[half:]
-                temp.append(str(int(first)))
-                temp.append(str(int(second)))
+                temp.append(str(int(stone[:half])))
+                temp.append(str(int(stone[half:])))
                 continue
             value = value * 2024
             temp.append(str(value))
