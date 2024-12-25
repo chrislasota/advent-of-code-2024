@@ -4,7 +4,6 @@
 
 import re
 
-
 def adv(regs, operand):
     # opcode = 0
     # divide A by a power of 2 -> A
@@ -139,7 +138,6 @@ def main():
     for digit in program:
         program_string = program_string + str(digit) + ','
     program_string = program_string[:-1]   # omit last comma
-
     print(f"The program code  : {program}")
     print(f"Initial registers : {initial_registers}")
 
@@ -150,7 +148,7 @@ def main():
     # v v v v v v v v v v v v v v v v v v v v v v v v v v v v v v v v v v
     # The length of the output string grows monotonically with the size
     # of the initial register A value.  Furthermore, the end of the output
-    # string changes at a logarithmic-like pace depending on the size of the 
+    # string changes at a logarithmic-like pace depending on the size of the
     # value for register A.  So in order to efficiently find the correct
     # value for register A, we will use an adapative step_size method
 
@@ -161,10 +159,9 @@ def main():
     # but we cannot exceed a value of 281475000000000 as such values produce
     # an output that is too long.
 
-    A_MIN = 35184300000000
+    psl = len(program_string)
     A_MAX = 281475100000000
-    A = A_MIN
-    # A = 236581108670061 is the solution for my given input file
+    A = 0
     delta_A = 1
     while True:
         registers = initial_registers.copy()
@@ -177,20 +174,11 @@ def main():
             break
         # Adjust delta_A by how much of the end of the output string matches
         # based ONLY on observations out this code's output
-        if output_string[28:] != "3,0":
-            delta_A = 100000000
-        if output_string[26:] == "5,3,0":
-            delta_A = 10000000
-        if output_string[24:] == "5,5,3,0":
-            delta_A = 1000000
-        if output_string[22:] == "5,5,5,3,0":
-            delta_A = 10000
-        if output_string[20:] == "1,5,5,5,3,0":
-            delta_A = 1000
-        if output_string[18:] == "1,1,5,5,5,3,0":
-            delta_A = 100
-        if output_string[16:] == "4,1,1,5,5,5,3,0":
-            delta_A = 1
+        for k in range(9):
+            s = 2*k + 3
+            if output_string[psl-s:] != program_string[psl-s:]:
+                delta_A = 10**(8-k)
+                break
         A = A + delta_A
         if A > A_MAX:
             print("SEARCH FAILED")
