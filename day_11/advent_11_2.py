@@ -77,7 +77,6 @@ def sum_histogram_values(histogram) -> int:
 def main(how_many_blinks) -> int:
     stones = file_to_list("input_day_11.txt")
     stone_histogram = create_histogram_from_list(stones)
-    stone_count = sum_histogram_values(stone_histogram)
     for b in range(how_many_blinks):
         stone_histogram = blink(stone_histogram)
         stone_count = sum_histogram_values(stone_histogram)
