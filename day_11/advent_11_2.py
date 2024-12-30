@@ -79,7 +79,6 @@ def main(how_many_blinks) -> int:
     stone_histogram = create_histogram_from_list(stones)
     for b in range(how_many_blinks):
         stone_histogram = blink(stone_histogram)
-        stone_count = sum_histogram_values(stone_histogram)
     stone_count = sum_histogram_values(stone_histogram)
     return stone_count
 
